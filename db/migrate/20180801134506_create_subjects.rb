@@ -10,5 +10,6 @@ class CreateSubjects < ActiveRecord::Migration[5.2]
       Subject.create :name => "Mathematics"
       Subject.create :name => "Chemistry"
       Subject.create :name => "Geography"
+      Subject.create :name => "other"
     end
 end
