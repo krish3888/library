@@ -1,3 +1,8 @@
+<ul id = "subjects">
+   <% Subject.find_each do |c| %>
+   <li><%= link_to c.name, :action => "show_subjects", :id => c.id %></li>
+   <% end %>
+</ul>
 <% if @books.blank? %>
 <p>There are not any books currently in the library.Click below to add new book in library  </p>
 <% else %>
@@ -7,6 +12,7 @@
 	<% @books.each do |c| %>
     <li><%= link_to c.title, {:action => 'show', :id => c.id} -%>
    	<b> <%= link_to 'Edit', {:action => "edit",:id => c.id}%></b>
+   	<b> <%= link_to "Delete", {:action => 'delete', :id => c.id},:confirm => "Are you sure you want to delete this item?" %></b>
     </li>
     <% end %>
 </ul>
